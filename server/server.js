@@ -4,13 +4,21 @@ require("dotenv").config();
 const PORT = process.env.PORT || 8080;
 const app = express();
 const axios = require("axios");
-const mongoose = require("mongoose");
 app.use(cors());
 
-mongoose.connect(process.env.DB_URL);
+const mongoose = require("mongoose");
+const Book = require("./models/book");
+mongoose.connect(
+  "mongodb+srv://leemander:bookspassword@cluster0.11sdakd.mongodb.net/"
+);
 
 app.get("/", (_, res) => {
   res.json("This is the root.");
+});
+
+app.get("/books", async (req, res) => {
+  const books = await Book.find(req.query);
+  res.json(books);
 });
 
 app.listen(PORT, () => {
