@@ -9,7 +9,7 @@ app.use(cors());
 const mongoose = require("mongoose");
 const Book = require("./models/book");
 mongoose.connect(
-  "mongodb+srv://leemander:bookspassword@cluster0.11sdakd.mongodb.net/"
+  `mongodb+srv://leemander:${process.env.DB_PASSWORD}@cluster0.11sdakd.mongodb.net/`
 );
 
 app.get("/", (_, res) => {
