@@ -3,7 +3,7 @@ import "./App.css";
 import axios from "axios";
 
 function App() {
-  const [movies, setBooks] = useState([]);
+  const [books, setBooks] = useState([]);
 
   useEffect(() => {
     getBooks();
@@ -17,7 +17,18 @@ function App() {
 
   return (
     <>
-      <main></main>
+      <main>
+        {books &&
+          books.map((book) => {
+            return (
+              <article>
+                <h2>{book.title}</h2>
+                <p>{book.description}</p>
+                <p>Status: {book.status}</p>
+              </article>
+            );
+          })}
+      </main>
     </>
   );
 }
