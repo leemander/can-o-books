@@ -8,9 +8,7 @@ app.use(cors());
 
 const mongoose = require("mongoose");
 const Book = require("./models/book");
-mongoose.connect(
-  "mongodb+srv://leemander:bookspassword@cluster0.11sdakd.mongodb.net/"
-);
+mongoose.connect(process.env.DB_URL);
 
 app.get("/", (_, res) => {
   res.json("This is the root.");
