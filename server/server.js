@@ -5,6 +5,7 @@ const PORT = process.env.PORT || 8080;
 const app = express();
 const axios = require("axios");
 app.use(cors());
+app.use(express.json());
 
 const mongoose = require("mongoose");
 const Book = require("./models/book");
@@ -17,6 +18,11 @@ app.get("/", (_, res) => {
 app.get("/books", async (req, res) => {
   const books = await Book.find(req.query);
   res.json(books);
+});
+
+app.post("/books", async (req, res) => {
+  const newBook = await Book.create(req.body);
+  res.json(newBook);
 });
 
 app.listen(PORT, () => {
