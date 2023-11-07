@@ -1,13 +1,27 @@
 import "./App.css";
-import BestBooks from "./components/BestBooks";
+import Home from "./pages/home";
+import About from "./pages/about";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
+      <header>
+        <h1>Can-o-Books</h1>
+        <nav>
+          <ul>
+            <Link to="/">Home</Link>
+            <Link to="/About">About</Link>
+          </ul>
+        </nav>
+      </header>
       <main>
-        <BestBooks />
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/About" element={<About />}></Route>
+        </Routes>
       </main>
-    </>
+    </BrowserRouter>
   );
 }
 
