@@ -1,12 +1,9 @@
-import import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import Home from "./pages/home";
 import About from "./pages/about";
 
-
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-
-const[showNewBook, setShowNewBook] = useState(false) 
 
 function App() {
   return (

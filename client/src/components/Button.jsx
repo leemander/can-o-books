@@ -1,3 +1,3 @@
-export default function Button() {
-  return <button>Add Book</button>;
+export default function Button({ showNewBook, setShowNewBook }) {
+  return <button onClick={() => setShowNewBook(!showNewBook)}>Add Book</button>;
 }
