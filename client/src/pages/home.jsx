@@ -19,7 +19,7 @@ export default function Home() {
   return (
     <>
       <h2>Best Books</h2>
-      <BestBooks books={books} />
+      <BestBooks books={books} getBooks={getBooks} />
       <Form books={books} setBooks={setBooks} />
     </>
   );
