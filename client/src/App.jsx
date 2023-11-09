@@ -36,13 +36,13 @@ function App() {
           <Route
             path="/"
             element={
-              <Home books={books} getBooks={getBooks} setBooks={setBooks} />
+              <Home books={books} setBooks={setBooks} getBooks={getBooks} />
             }
           ></Route>
           <Route path="/About" element={<About />}></Route>
           <Route
             path="/Book/:id"
-            element={<BookPage getBooks={getBooks} />}
+            element={<BookPage books={books} setBooks={setBooks} />}
           ></Route>
         </Routes>
       </main>

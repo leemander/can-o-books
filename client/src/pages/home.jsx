@@ -1,9 +1,7 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
 import Form from "../components/Form";
 import BestBooks from "../components/BestBooks";
 
-export default function Home({ books, getBooks, setBooks }) {
+export default function Home({ books, setBooks, getBooks }) {
   return (
     <>
       <h2>Best Books</h2>

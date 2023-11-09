@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import Book from "../components/Book";
 import Form from "../components/Form";
-export default function BookPage({ getBooks }) {
+export default function BookPage({ books, setBooks }) {
   const [book, setBook] = useState({});
 
   const params = useParams();
@@ -13,20 +12,17 @@ export default function BookPage({ getBooks }) {
   }, []);
 
   async function getBook() {
-    const API = `http://localhost:8080/books?_id=${params.id}`;
+    const API = `https://can-o-books-backend.onrender.com/books?_id=${params.id}`;
     const res = await axios.get(API);
     setBook(res.data[0]);
   }
 
   return (
     <main>
-      <Book
-        title={book.title}
-        description={book.description}
-        status={book.status}
-        getBooks={getBooks}
-      />
-      <Form />
+      <h2>{book.title}</h2>
+      <p>{book.description}</p>
+      <p>Read: {book.status ? "Yes" : "No"}</p>
+      {book.title && <Form book={book} setBook={setBook} />}
     </main>
   );
 }

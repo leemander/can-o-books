@@ -14,7 +14,7 @@ export default function Book({ title, description, status, id, getBooks }) {
         <h2>{title}</h2>
       </Link>
       <p>{description}</p>
-      <p>Status: {status}</p>
+      <p>Read: {status ? "Yes" : "No"}</p>
       <button onClick={handleClick}>Delete</button>
     </article>
   );

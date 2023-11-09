@@ -1,0 +1,40 @@
+body {
+  font-family: sans-serif;
+}
+
+header {
+  align-items: center;
+  display: flex;
+}
+
+header > nav > ul {
+  display: flex;
+  gap: 1em;
+}
+
+article {
+  background-color: #ddd;
+  padding: 0.5em;
+  margin: 1em 0;
+}
+
+fieldset {
+  margin: 1em 0;
+  display: grid;
+  gap: 1em;
+}
+
+label {
+  display: grid;
+  gap: 0.5em;
+}
+
+label:has(input[type="checkbox"]) {
+  display: flex;
+}
+
+fieldset > button {
+  display: block;
+  width: fit-content;
+  padding: 0.5em;
+}
