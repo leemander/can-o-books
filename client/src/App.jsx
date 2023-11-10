@@ -3,8 +3,6 @@ import "./App.css";
 import Home from "./pages/home";
 import About from "./pages/about";
 import BookPage from "./pages/BookPage";
-import LoginButton from "./components/LogInButton";
-import LogoutButton from "./components/LogoutButton";
 import axios from "axios";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
