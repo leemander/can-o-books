@@ -6,12 +6,10 @@ import BookPage from "./pages/BookPage";
 import LoginButton from "./components/LogInButton";
 import LogoutButton from "./components/LogoutButton";
 import axios from "axios";
-import { useAuth0 } from "@auth0/auth0-react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 function App() {
   const [books, setBooks] = useState([]);
-  const { isAuthenticated } = useAuth0();
 
   async function getBooks() {
     const API = "https://can-o-books-backend.onrender.com/books";
@@ -32,7 +30,6 @@ function App() {
             <Link to="/">Home</Link>
             <Link to="/About">About</Link>
           </ul>
-          {isAuthenticated ? <LogoutButton /> : <LoginButton />}
         </nav>
       </header>
       <main>
